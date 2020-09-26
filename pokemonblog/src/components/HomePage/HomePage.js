@@ -217,7 +217,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
@@ -233,7 +232,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
@@ -249,7 +247,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
@@ -266,7 +263,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
