@@ -1,5 +1,42 @@
 import styled from "styled-components";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
+
+export const useStyles = makeStyles({
+  media: {
+    height: 160,
+  },
+});
+
+export const DivCard = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 70vw;
+  margin-left: 2rem;
+  flex-wrap: wrap;
+`;
+
+export const DivCards = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 6rem;
+  flex-direction: column;
+`;
+
+export const LastPoke = styled.p`
+  color: #72808e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+`;
+
+export const PCard = styled.p`
+  color: #ff6b18;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  margin: 0 0 5px 35px;
+`;
 
 export const Header = styled.header`
   background-color: white;

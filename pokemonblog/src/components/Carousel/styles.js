@@ -68,8 +68,8 @@ export const InsideDivScroll = styled.div`
 export const Body = styled.div`
   display: grid;
   justify-items: center;
-  height: 100vh;
   margin-top: 1.875rem;
+  height: auto;
 `;
 
 export const ButtonCall = styled.button`
