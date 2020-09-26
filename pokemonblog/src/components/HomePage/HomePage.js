@@ -20,6 +20,15 @@ import {
   DivCards,
   PCard,
   LastPoke,
+  DivBigCards,
+  RightBanner,
+  GroupCardsBanner,
+  PokemonTitle,
+  TitleBanner,
+  TextBanner,
+  ButtonCallBanner,
+  Pokebola,
+  Pikachu,
 } from "./styles";
 
 // Imgs
@@ -27,6 +36,8 @@ import Instagram from "../../imgs/instagram.svg";
 import Facebook from "../../imgs/facebook.svg";
 import Youtube from "../../imgs/youtube.svg";
 import Charizard from "../../imgs/charizardBoladao.png";
+import PokebolaImg from "../../imgs/pokebola.png";
+import PikachuImg from "../../imgs/pikachu.png";
 
 // Material UI
 import Button from "@material-ui/core/Button";
@@ -35,18 +46,14 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MenuIcon from "@material-ui/icons/Menu";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import Card from "@material-ui/core/Card";
 
 function HomePage() {
   // Estado pro menu dinâmico
   const [anchorEl, setAnchorEl] = React.useState(null);
+  // Setando o estado para o array de pokemons.
   const [pokemonList, setPokemonList] = useState([]);
-  const [pokemonName, setPokemonName] = useState([]);
-  const [pokemonImg, setPokemonImg] = useState("");
-
-  const arrayPokemons = [];
 
   // Usestyles
   const classes = useStyles();
@@ -61,29 +68,31 @@ function HomePage() {
   };
 
   const Cards = styled(Card)`
-    margin-right: 20px;
+    margin-right: 1.25rem;
     width: 8rem;
+    height: 12rem;
+  `;
+
+  const BigCard = styled(Card)`
+    margin: 2rem 1.5rem 1.25rem 0;
+    width: 10rem;
     height: 12rem;
   `;
 
   // API
 
+  // Pegando a lista de pokemons.
   const takePokemon = () => {
-    const request = axios.get("https://pokeapi.co/api/v2/pokemon/?limit=15");
+    const request = axios.get("https://pokeapi.co/api/v2/pokemon/?limit=25");
 
     request
       .then((response) => {
         setPokemonList(response.data.results);
-        console.log(response.data.results);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  const laçoTeste = arrayPokemons.forEach((poke) => {
-    return console.log(poke);
-  });
 
   const takePokemonData = (poke) => {
     const request = axios.get(`https://pokeapi.co/api/v2/pokemon/${poke}`);
@@ -91,7 +100,7 @@ function HomePage() {
 
     request
       .then((response) => {
-        arrayPokemons.push(response.data.sprites.front_default);
+        console.log(response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -109,6 +118,8 @@ function HomePage() {
   useEffect(() => {
     takePokemon();
   }, []);
+
+  let cont = 0;
 
   return (
     <AllDiv>
@@ -155,21 +166,31 @@ function HomePage() {
           </DivHeader>
         </Header>
         <CharizardComponent src={Charizard} />
+
         {/* Banner */}
         <Carousel />
 
         <DivCards>
           <LastPoke>Últimos pokemons</LastPoke>
 
+          {/* Um map para renderizar os cards na tela com as 
+          infos da API. Criei um contador pra modificar o link, 
+          acho que vai poupar mais linhas de código. Coloquei também pra renderizar acima de 8,
+          porque os outros pokemons vou utilizar nos cards grandes. */}
+
           <DivCard>
             {pokemonList.map((poke) => {
-              if (pokemonList.indexOf(poke) > 8)
+              cont = cont + 1;
+              if (
+                pokemonList.indexOf(poke) > 15 &&
+                pokemonList.indexOf(poke) < 22
+              )
                 return (
                   <Cards>
                     <CardActionArea>
                       <CardMedia
                         className={classes.media}
-                        image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"
+                        image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${cont}.png`}
                       />
                       <PCard>{poke.name}</PCard>
                     </CardActionArea>
@@ -178,7 +199,105 @@ function HomePage() {
             })}
           </DivCard>
         </DivCards>
-        {laçoTeste}
+
+        <GroupCardsBanner>
+          <DivBigCards>
+            {/* Aqui foi feito um switch case com os pokemons específicos,
+          puxando o valor da api.*/}
+
+            {pokemonList.map((poke) => {
+              switch (pokemonList.indexOf(poke)) {
+                case 5:
+                  return (
+                    <div>
+                      <PokemonTitle>Charizard</PokemonTitle>
+                      <BigCard>
+                        <CardActionArea>
+                          <CardMedia
+                            className={classes.media}
+                            image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png`}
+                          />
+                          <PCard>{poke.name}</PCard>
+                        </CardActionArea>
+                      </BigCard>
+                    </div>
+                  );
+
+                case 24:
+                  return (
+                    <div>
+                      <PokemonTitle>Pikachu</PokemonTitle>
+                      <BigCard>
+                        <CardActionArea>
+                          <CardMedia
+                            className={classes.media}
+                            image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png`}
+                          />
+                          <PCard>{poke.name}</PCard>
+                        </CardActionArea>
+                      </BigCard>
+                    </div>
+                  );
+
+                case 1:
+                  return (
+                    <div>
+                      <PokemonTitle>Ivysaur</PokemonTitle>
+                      <BigCard>
+                        <CardActionArea>
+                          <CardMedia
+                            className={classes.media}
+                            image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png`}
+                          />
+                          <PCard>{poke.name}</PCard>
+                        </CardActionArea>
+                      </BigCard>
+                    </div>
+                  );
+
+                case 0:
+                  return (
+                    <div>
+                      <PokemonTitle>Bulbassaur</PokemonTitle>
+
+                      <BigCard>
+                        <CardActionArea>
+                          <CardMedia
+                            className={classes.media}
+                            image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`}
+                          />
+                          <PCard>{poke.name}</PCard>
+                        </CardActionArea>
+                      </BigCard>
+                    </div>
+                  );
+              }
+            })}
+          </DivBigCards>
+          <RightBanner>
+            <TitleBanner>Teste frontend</TitleBanner>
+            <TextBanner>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi, a
+              lacus, aliquam mattis est enim, molestie diam. Consequat blandit
+              nec, venenatis dignissim suspendisse in facilisi molestie duis.
+              Tempor sed quis phasellus arcu, posuere. Elementum ut tellus nisi,
+              nunc ac etiam ut lectus porta. Et morbi enim vestibulum sodales
+              sed ullamcorper dapibus accumsan. Faucibus pharetra, et at orci,
+              vel blandit odio. Volutpat urna fusce quisque libero pellentesque
+              in. Augue tempor vitae ullamcorper bibendum.
+              <br />
+              <br />
+              Quis facilisi nulla id est natoque sed ut consectetur. Id eleifend
+              eros ullamcorper et. Diam, ultrices pellentesque urna, integer a
+              lectus. Sit sollicitudin ac egestas amet netus. Elit vitae dolor
+              cursus cursus.{" "}
+            </TextBanner>
+            <ButtonCallBanner>Call to Action</ButtonCallBanner>
+          </RightBanner>
+        </GroupCardsBanner>
+
+        <Pokebola src={PokebolaImg} />
+        <Pikachu src={PikachuImg} />
       </ThemeProvider>
     </AllDiv>
   );

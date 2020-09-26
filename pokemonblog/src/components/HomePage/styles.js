@@ -20,6 +20,49 @@ export const DivCards = styled.div`
   align-items: center;
   margin-top: 6rem;
   flex-direction: column;
+  margin-bottom: 3.125rem;
+`;
+
+export const DivBigCards = styled.div`
+  width: 35vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+`;
+
+export const GroupCardsBanner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const RightBanner = styled.div`
+  width: 32vw;
+  height: 75vh;
+  background-color: #ffd029;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`;
+
+export const TitleBanner = styled.p`
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #ff6b18;
+  margin-left: 3rem;
+`;
+
+export const TextBanner = styled.p`
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  width: 25vw;
+  margin-left: 3rem;
+  color: #1a1a1a;
 `;
 
 export const LastPoke = styled.p`
@@ -28,6 +71,13 @@ export const LastPoke = styled.p`
   font-weight: 700;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+`;
+
+export const PokemonTitle = styled.p`
+  color: #72808e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 0.625rem;
 `;
 
 export const PCard = styled.p`
@@ -51,7 +101,7 @@ export const Header = styled.header`
 
 export const AllDiv = styled.div`
   background-color: #e5e5e5;
-  height: auto;
+  height: 280vh;
 `;
 
 export const DivHeader = styled.div`
@@ -87,6 +137,11 @@ export const ButtonCall = styled.button`
   cursor: pointer;
 `;
 
+// Aproveitando o mesmo button, mudando apenas a margin /\
+export const ButtonCallBanner = styled(ButtonCall)`
+  margin-left: 3rem;
+`;
+
 export const CharizardComponent = styled.img`
   max-width: 100%;
   position: absolute;
@@ -107,3 +162,16 @@ export const theme = createMuiTheme({
     },
   },
 });
+
+export const Pokebola = styled.img`
+  max-width: 100%;
+  position: absolute;
+  left: 825px;
+  top: 1475px;
+`;
+export const Pikachu = styled.img`
+  max-width: 80%;
+  position: absolute;
+  left: 1000px;
+  top: 1375px;
+`;
