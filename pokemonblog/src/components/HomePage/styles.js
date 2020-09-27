@@ -14,6 +14,10 @@ export const DivCard = styled.div`
   width: 70vw;
   margin-left: 2rem;
   flex-wrap: wrap;
+
+  @media (max-width: 425px) {
+    width: 90vw;
+  }
 `;
 
 // Div flexbox pra centralizar os cartões
@@ -49,6 +53,10 @@ export const RightBanner = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 // Título banner lateral
@@ -84,6 +92,10 @@ export const LastPoke = styled.p`
 // Aprovitando o título acima com margin
 export const PokemonTitle = styled(LastPoke)`
   margin-left: 0.625rem;
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 export const EmailP = styled(LastPoke)`

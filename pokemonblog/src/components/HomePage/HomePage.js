@@ -35,6 +35,7 @@ import {
   Rights,
   BaseFlexFooter,
   LogoFooter,
+  // AAAAA
 } from "./styles";
 
 // Imgs
@@ -79,12 +80,20 @@ function HomePage() {
     margin-right: 1.25rem;
     width: 8rem;
     height: 12rem;
+
+    @media (max-width: 425px) {
+      margin-bottom: 2rem;
+    }
   `;
 
   const BigCard = styled(Card)`
     margin: 2rem 1.5rem 1.25rem 0;
     width: 10rem;
     height: 12rem;
+
+    @media (max-width: 425px) {
+      display: none;
+    }
   `;
 
   // API
