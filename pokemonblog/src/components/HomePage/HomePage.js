@@ -82,7 +82,7 @@ function HomePage() {
     width: 8rem;
     height: 12rem;
 
-    @media (max-width: 475px) {
+    @media (max-width: 530px) {
       margin-bottom: 2rem;
     }
   `;
@@ -92,7 +92,13 @@ function HomePage() {
     width: 10rem;
     height: 12rem;
 
-    @media (max-width: 475px) {
+    @media (max-width: 530px) {
+      display: none;
+    }
+  `;
+
+  const Screen = styled.div`
+    @media (max-width: 600px) {
       display: none;
     }
   `;
@@ -117,9 +123,7 @@ function HomePage() {
     console.log(request);
 
     request
-      .then((response) => {
-        console.log(response.data);
-      })
+      .then((response) => {})
       .catch((err) => {
         console.log(err);
       });

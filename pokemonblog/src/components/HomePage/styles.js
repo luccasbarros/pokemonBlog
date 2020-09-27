@@ -15,7 +15,7 @@ export const DivCard = styled.div`
   margin-left: 2rem;
   flex-wrap: wrap;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     width: 90vw;
   }
 `;
@@ -54,7 +54,7 @@ export const RightBanner = styled.div`
   align-items: flex-start;
   justify-content: center;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -93,7 +93,7 @@ export const LastPoke = styled.p`
 export const PokemonTitle = styled(LastPoke)`
   margin-left: 0.625rem;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -129,7 +129,7 @@ export const AllDiv = styled.div`
   background-color: #e5e5e5;
   height: 280vh;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     height: auto;
   }
 `;
@@ -158,7 +158,7 @@ export const Circle = styled.div`
   margin-right: 0.625rem;
   cursor: pointer;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     width: 24px;
     height: 24px;
   }
@@ -179,7 +179,7 @@ export const ButtonCall = styled.button`
   margin-right: 2rem;
   cursor: pointer;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -195,7 +195,7 @@ export const CharizardComponent = styled.img`
   position: absolute;
   left: 721px;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -214,7 +214,7 @@ export const LogoFooter = styled(Logo)`
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 0.875rem;
 
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -234,7 +234,7 @@ export const Pokebola = styled.img`
   position: absolute;
   left: 825px;
   top: 1475px;
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -245,7 +245,7 @@ export const Pikachu = styled.img`
   position: absolute;
   left: 1000px;
   top: 1375px;
-  @media (max-width: 475px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -258,6 +258,9 @@ export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 530px) {
+    margin-top: 0;
+  }
 `;
 
 export const DivFooter = styled.div`
