@@ -128,6 +128,10 @@ export const Header = styled.header`
 export const AllDiv = styled.div`
   background-color: #e5e5e5;
   height: 280vh;
+
+  @media (max-width: 425px) {
+    height: auto;
+  }
 `;
 
 // Div utilizada comumente com flexbox

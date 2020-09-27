@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 // Carousel
 import Carousel from "../Carousel/Carousel";
+import CarouselMobile from "../CarouselMobile/CarouselMobile";
 
 // Styled-Components
 import {
@@ -311,6 +312,9 @@ function HomePage() {
 
         <Pokebola src={PokebolaImg} />
         <Pikachu src={PikachuImg} />
+
+        {/* Carousel Mobile */}
+        <CarouselMobile pokemonList={pokemonList} />
 
         <Footer>
           <DivFooter>
