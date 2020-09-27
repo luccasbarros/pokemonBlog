@@ -10,7 +10,7 @@ import {
   AllDiv,
   Header,
   Circle,
-  DivHeader,
+  BaseFlex,
   ButtonCall,
   theme,
   Logo,
@@ -29,6 +29,13 @@ import {
   ButtonCallBanner,
   Pokebola,
   Pikachu,
+  Footer,
+  DivFooter,
+  EmailP,
+  Rights,
+  BaseFlexFooter,
+  LogoFooter,
+  // AAAAA
 } from "./styles";
 
 // Imgs
@@ -38,6 +45,8 @@ import Youtube from "../../imgs/youtube.svg";
 import Charizard from "../../imgs/charizardBoladao.png";
 import PokebolaImg from "../../imgs/pokebola.png";
 import PikachuImg from "../../imgs/pikachu.png";
+import Email from "../../imgs/email.svg";
+import LogoYooh from "../../imgs/logo.svg";
 
 // Material UI
 import Button from "@material-ui/core/Button";
@@ -71,12 +80,20 @@ function HomePage() {
     margin-right: 1.25rem;
     width: 8rem;
     height: 12rem;
+
+    @media (max-width: 425px) {
+      margin-bottom: 2rem;
+    }
   `;
 
   const BigCard = styled(Card)`
     margin: 2rem 1.5rem 1.25rem 0;
     width: 10rem;
     height: 12rem;
+
+    @media (max-width: 425px) {
+      display: none;
+    }
   `;
 
   // API
@@ -128,7 +145,7 @@ function HomePage() {
         {/* Header espaçados com flexbox, tornando mais responsivo. */}
         <Header>
           {/* Div Logo + Menu */}
-          <DivHeader>
+          <BaseFlex>
             <Button
               variant="contained"
               color="primary"
@@ -149,10 +166,10 @@ function HomePage() {
               <MenuItem>Teste</MenuItem>
             </Menu>
             <Logo>PokemonBlog</Logo>
-          </DivHeader>
+          </BaseFlex>
 
           {/* Div Redes + Button */}
-          <DivHeader>
+          <BaseFlex>
             <ButtonCall>Call to action</ButtonCall>
             <Circle>
               <img src={Instagram} />
@@ -163,7 +180,7 @@ function HomePage() {
             <Circle>
               <img src={Youtube} />
             </Circle>
-          </DivHeader>
+          </BaseFlex>
         </Header>
         <CharizardComponent src={Charizard} />
 
@@ -217,7 +234,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
@@ -233,7 +249,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
@@ -249,7 +264,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
@@ -266,7 +280,6 @@ function HomePage() {
                             className={classes.media}
                             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`}
                           />
-                          <PCard>{poke.name}</PCard>
                         </CardActionArea>
                       </BigCard>
                     </div>
@@ -298,6 +311,29 @@ function HomePage() {
 
         <Pokebola src={PokebolaImg} />
         <Pikachu src={PikachuImg} />
+
+        <Footer>
+          <DivFooter>
+            <LogoFooter>PokemonBlog</LogoFooter>
+            <BaseFlex>
+              <img src={Email} />
+              <EmailP>email@testeweb.com</EmailP>
+              <Circle>
+                <img src={Instagram} />
+              </Circle>
+              <Circle>
+                <img src={Facebook} />
+              </Circle>
+              <Circle>
+                <img src={Youtube} />
+              </Circle>
+            </BaseFlex>
+          </DivFooter>
+          <BaseFlexFooter>
+            <Rights>2020 © Todos os direitos reservados.</Rights>
+            <img src={LogoYooh} />
+          </BaseFlexFooter>
+        </Footer>
       </ThemeProvider>
     </AllDiv>
   );
