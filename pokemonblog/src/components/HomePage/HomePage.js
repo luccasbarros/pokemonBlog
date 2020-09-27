@@ -82,7 +82,7 @@ function HomePage() {
     width: 8rem;
     height: 12rem;
 
-    @media (max-width: 425px) {
+    @media (max-width: 475px) {
       margin-bottom: 2rem;
     }
   `;
@@ -92,7 +92,7 @@ function HomePage() {
     width: 10rem;
     height: 12rem;
 
-    @media (max-width: 425px) {
+    @media (max-width: 475px) {
       display: none;
     }
   `;
