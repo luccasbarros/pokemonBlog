@@ -7,6 +7,7 @@ export const useStyles = makeStyles({
   },
 });
 
+// Onde os cards menores estão.
 export const DivCard = styled.div`
   display: flex;
   justify-content: space-around;
@@ -15,6 +16,7 @@ export const DivCard = styled.div`
   flex-wrap: wrap;
 `;
 
+// Div flexbox pra centralizar os cartões
 export const DivCards = styled.div`
   display: flex;
   align-items: center;
@@ -23,6 +25,7 @@ export const DivCards = styled.div`
   margin-bottom: 3.125rem;
 `;
 
+// Engloba os cards maiores
 export const DivBigCards = styled.div`
   width: 35vw;
   display: flex;
@@ -30,12 +33,14 @@ export const DivBigCards = styled.div`
   margin-left: 1rem;
 `;
 
+// Contém a div dos cards maiores mais o banner lateral
 export const GroupCardsBanner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+// Banner lateral
 export const RightBanner = styled.div`
   width: 32vw;
   height: 75vh;
@@ -46,6 +51,7 @@ export const RightBanner = styled.div`
   justify-content: center;
 `;
 
+// Título banner lateral
 export const TitleBanner = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
@@ -55,6 +61,7 @@ export const TitleBanner = styled.p`
   margin-left: 3rem;
 `;
 
+// Texto do banner lateral
 export const TextBanner = styled.p`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -65,6 +72,7 @@ export const TextBanner = styled.p`
   color: #1a1a1a;
 `;
 
+// Tipografia no estilo title para os nomes dos pokémons
 export const LastPoke = styled.p`
   color: #72808e;
   font-size: 1.5rem;
@@ -73,13 +81,17 @@ export const LastPoke = styled.p`
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
 
-export const PokemonTitle = styled.p`
-  color: #72808e;
-  font-size: 1.5rem;
-  font-weight: 700;
+// Aprovitando o título acima com margin
+export const PokemonTitle = styled(LastPoke)`
   margin-left: 0.625rem;
 `;
 
+export const EmailP = styled(LastPoke)`
+  font-size: 1rem;
+  margin: 0 0.875rem;
+`;
+
+// Nome dos pokemons em laranja
 export const PCard = styled.p`
   color: #ff6b18;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -88,6 +100,7 @@ export const PCard = styled.p`
   margin: 0 0 5px 35px;
 `;
 
+// Header
 export const Header = styled.header`
   background-color: white;
   width: 100%;
@@ -99,17 +112,25 @@ export const Header = styled.header`
   justify-content: space-around;
 `;
 
+// Div que engloba o conteúdo
 export const AllDiv = styled.div`
   background-color: #e5e5e5;
   height: 280vh;
 `;
 
-export const DivHeader = styled.div`
+// Div utilizada comumente com flexbox
+export const BaseFlex = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 `;
 
+export const BaseFlexFooter = styled(BaseFlex)`
+  justify-content: space-between;
+  width: 68vw;
+`;
+
+// Círculo redes sociais
 export const Circle = styled.div`
   height: 32px;
   width: 32px;
@@ -120,8 +141,14 @@ export const Circle = styled.div`
   justify-content: center;
   margin-right: 0.625rem;
   cursor: pointer;
+
+  @media (max-width: 425px) {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
+// Button padrão CallToA
 export const ButtonCall = styled.button`
   width: 12.5rem;
   height: 3rem;
@@ -135,6 +162,10 @@ export const ButtonCall = styled.button`
   letter-spacing: 0.1rem;
   margin-right: 2rem;
   cursor: pointer;
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 // Aproveitando o mesmo button, mudando apenas a margin /\
@@ -142,12 +173,18 @@ export const ButtonCallBanner = styled(ButtonCall)`
   margin-left: 3rem;
 `;
 
+// Charizard IMG
 export const CharizardComponent = styled.img`
   max-width: 100%;
   position: absolute;
   left: 721px;
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
+// Logo Header
 export const Logo = styled.h1`
   font-size: 1.5rem;
   color: #ff6b18;
@@ -155,6 +192,18 @@ export const Logo = styled.h1`
   margin-left: 0.875rem;
 `;
 
+export const LogoFooter = styled(Logo)`
+  font-size: 1.5rem;
+  color: #ff6b18;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 0.875rem;
+
+  @media (max-width: 425px) {
+    display: none;
+  }
+`;
+
+// Tema pro button do Material
 export const theme = createMuiTheme({
   palette: {
     primary: {
@@ -163,15 +212,51 @@ export const theme = createMuiTheme({
   },
 });
 
+// Pokebola IMG
 export const Pokebola = styled.img`
   max-width: 100%;
   position: absolute;
   left: 825px;
   top: 1475px;
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
+
+// Pikachu IMG
 export const Pikachu = styled.img`
   max-width: 80%;
   position: absolute;
   left: 1000px;
   top: 1375px;
+  @media (max-width: 425px) {
+    display: none;
+  }
+`;
+
+export const Footer = styled.footer`
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+  margin-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const DivFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+  height: 12vh;
+  width: 70vw;
+`;
+
+export const Rights = styled.p`
+  font-size: 0.875;
+  font-weight: 400;
+  font-family: "Proxima Nova";
+  color: #666666;
+  margin-right: 2rem;
 `;

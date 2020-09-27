@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Charizard from "../../imgs/charizardBoladao.png";
 import {
   ExtDivCarousel,
   DivItem,
@@ -9,6 +10,9 @@ import {
   Body,
   Paragraph,
   ButtonCall,
+  CharizardImg,
+  DivContent,
+  DivContentAll,
 } from "./styles";
 
 function Carousel() {
@@ -27,22 +31,32 @@ function Carousel() {
       <ExtDivCarousel>
         <DivItem className="item">
           <InsideDiv>
-            <MediumTitle>Faça seu teste</MediumTitle>
-            <BigTitle>De frontend</BigTitle>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet,
-              euismod at egestas sapien porttitor dui.
-            </Paragraph>
-            <ButtonCall>Call to Action</ButtonCall>
+            <DivContentAll>
+              <DivContent>
+                <MediumTitle>Faça seu teste</MediumTitle>
+                <BigTitle>De frontend</BigTitle>
+                <Paragraph>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet,
+                  euismod at egestas sapien porttitor dui.
+                </Paragraph>
+                <ButtonCall>Call to Action</ButtonCall>
+              </DivContent>
+              <CharizardImg src={Charizard} />
+            </DivContentAll>
           </InsideDiv>
           <InsideDivScroll>
-            <MediumTitle>Faça seu teste</MediumTitle>
-            <BigTitle>De frontend</BigTitle>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet,
-              euismod at egestas sapien porttitor dui.
-            </Paragraph>
-            <ButtonCall>Call to Action</ButtonCall>
+            <DivContentAll>
+              <DivContent>
+                <MediumTitle>Faça seu teste</MediumTitle>
+                <BigTitle>De frontend</BigTitle>
+                <Paragraph>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet,
+                  euismod at egestas sapien porttitor dui.
+                </Paragraph>
+                <ButtonCall>Call to Action</ButtonCall>
+              </DivContent>
+              <CharizardImg src={Charizard} />
+            </DivContentAll>
           </InsideDivScroll>
         </DivItem>
       </ExtDivCarousel>

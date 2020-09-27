@@ -10,7 +10,7 @@ import {
   AllDiv,
   Header,
   Circle,
-  DivHeader,
+  BaseFlex,
   ButtonCall,
   theme,
   Logo,
@@ -29,6 +29,12 @@ import {
   ButtonCallBanner,
   Pokebola,
   Pikachu,
+  Footer,
+  DivFooter,
+  EmailP,
+  Rights,
+  BaseFlexFooter,
+  LogoFooter,
 } from "./styles";
 
 // Imgs
@@ -38,6 +44,8 @@ import Youtube from "../../imgs/youtube.svg";
 import Charizard from "../../imgs/charizardBoladao.png";
 import PokebolaImg from "../../imgs/pokebola.png";
 import PikachuImg from "../../imgs/pikachu.png";
+import Email from "../../imgs/email.svg";
+import LogoYooh from "../../imgs/logo.svg";
 
 // Material UI
 import Button from "@material-ui/core/Button";
@@ -128,7 +136,7 @@ function HomePage() {
         {/* Header espaçados com flexbox, tornando mais responsivo. */}
         <Header>
           {/* Div Logo + Menu */}
-          <DivHeader>
+          <BaseFlex>
             <Button
               variant="contained"
               color="primary"
@@ -149,10 +157,10 @@ function HomePage() {
               <MenuItem>Teste</MenuItem>
             </Menu>
             <Logo>PokemonBlog</Logo>
-          </DivHeader>
+          </BaseFlex>
 
           {/* Div Redes + Button */}
-          <DivHeader>
+          <BaseFlex>
             <ButtonCall>Call to action</ButtonCall>
             <Circle>
               <img src={Instagram} />
@@ -163,7 +171,7 @@ function HomePage() {
             <Circle>
               <img src={Youtube} />
             </Circle>
-          </DivHeader>
+          </BaseFlex>
         </Header>
         <CharizardComponent src={Charizard} />
 
@@ -294,6 +302,29 @@ function HomePage() {
 
         <Pokebola src={PokebolaImg} />
         <Pikachu src={PikachuImg} />
+
+        <Footer>
+          <DivFooter>
+            <LogoFooter>PokemonBlog</LogoFooter>
+            <BaseFlex>
+              <img src={Email} />
+              <EmailP>email@testeweb.com</EmailP>
+              <Circle>
+                <img src={Instagram} />
+              </Circle>
+              <Circle>
+                <img src={Facebook} />
+              </Circle>
+              <Circle>
+                <img src={Youtube} />
+              </Circle>
+            </BaseFlex>
+          </DivFooter>
+          <BaseFlexFooter>
+            <Rights>2020 © Todos os direitos reservados.</Rights>
+            <img src={LogoYooh} />
+          </BaseFlexFooter>
+        </Footer>
       </ThemeProvider>
     </AllDiv>
   );
