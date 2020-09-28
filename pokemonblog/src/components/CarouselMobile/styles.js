@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Mesma estrutura do Carrosel principal
 export const ExtDivCarousel = styled.div`
   @media (max-width: 530px) {
     width: 100vw;

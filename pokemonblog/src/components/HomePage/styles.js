@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 
+// Padrão do CARD do Material
 export const useStyles = makeStyles({
   media: {
     height: 160,
@@ -277,6 +278,8 @@ export const Pikachu = styled.img`
     display: none;
   }
 `;
+
+// Footer Content
 
 export const Footer = styled.footer`
   width: 100%;

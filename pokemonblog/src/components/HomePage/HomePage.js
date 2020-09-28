@@ -78,6 +78,7 @@ function HomePage() {
     setAnchorEl(null);
   };
 
+  // Customizando o Material-UI
   const Cards = styled(Card)`
     margin-right: 1.25rem;
     width: 8rem;
@@ -113,25 +114,7 @@ function HomePage() {
       });
   };
 
-  const takePokemonData = (poke) => {
-    const request = axios.get(`https://pokeapi.co/api/v2/pokemon/${poke}`);
-    console.log(request);
-
-    request
-      .then((response) => {})
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const arrayRender = () => {
-    pokemonList.forEach((p) => {
-      takePokemonData(p.name);
-    });
-  };
-
-  arrayRender();
-
+  // Chamando a api de pegar pokemon toda vez que a page for renderizada
   useEffect(() => {
     takePokemon();
   }, []);
@@ -217,6 +200,7 @@ function HomePage() {
           </DivCard>
         </DivCards>
 
+        {/* Agrupamento do Banner + Cards */}
         <GroupCardsBanner>
           <DivBigCards>
             {/* Aqui foi feito um switch case com os pokemons específicos,
@@ -287,6 +271,8 @@ function HomePage() {
               }
             })}
           </DivBigCards>
+
+          {/* Banner Lateral */}
           <RightBanner>
             <TitleBanner>Teste frontend</TitleBanner>
             <TextBanner>
@@ -305,6 +291,8 @@ function HomePage() {
               lectus. Sit sollicitudin ac egestas amet netus. Elit vitae dolor
               cursus cursus.{" "}
             </TextBanner>
+
+            {/* Button */}
             <ButtonCallBanner>Call to Action</ButtonCallBanner>
           </RightBanner>
         </GroupCardsBanner>
@@ -315,14 +303,18 @@ function HomePage() {
         {/* Carousel Mobile */}
         <CarouselMobile pokemonList={pokemonList} />
 
+        {/* Footer */}
         <Footer>
           <DivFooter>
             <BaseFlex>
               <BaseFlexColumn>
+                {/* Email + SVG */}
                 <FlexOrganize>
                   <img src={Email} />
                   <EmailP>email@testeweb.com</EmailP>
                 </FlexOrganize>
+
+                {/* Redes */}
                 <FlexOrganize>
                   <Circle>
                     <img src={Instagram} />
@@ -338,8 +330,10 @@ function HomePage() {
             </BaseFlex>
           </DivFooter>
           <BaseFlexFooter>
+            {/* Logo apenas Mobile */}
             <LogoFooter>PokemonBlog</LogoFooter>
 
+            {/* Rodapé */}
             <Rights>2020 © Todos os direitos reservados.</Rights>
             <img src={LogoYooh} />
           </BaseFlexFooter>

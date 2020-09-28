@@ -21,6 +21,11 @@ function CarouselMobile(props) {
     <Body>
       <ExtDivCarousel>
         <DivItem className="item">
+          {/* Renderizando os Cards no Carrosel do Mobile.
+          Aqui e na versão Desktop poderia ter separado esses dados em outro componente,
+          diminuindo a quantidade de código.
+          Não fiz por causa do tempo :(
+          */}
           <InsideDiv>
             {props.pokemonList.map((poke) => {
               switch (props.pokemonList.indexOf(poke)) {

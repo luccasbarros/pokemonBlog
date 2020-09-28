@@ -16,6 +16,7 @@ import {
 } from "./styles";
 
 function Carousel() {
+  // Slide automático do Banner
   useEffect(() => {
     let count = 0;
     setInterval(function () {
@@ -28,6 +29,7 @@ function Carousel() {
 
   return (
     <Body>
+      {/* Carrosel */}
       <ExtDivCarousel>
         <DivItem className="item">
           <InsideDiv>

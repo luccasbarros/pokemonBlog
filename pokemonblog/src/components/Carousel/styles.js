@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Div Externa
 export const ExtDivCarousel = styled.div`
   width: 70vw;
 
@@ -8,6 +9,7 @@ export const ExtDivCarousel = styled.div`
   }
 `;
 
+// Div interna que chama a rollagem com scroll
 export const DivItem = styled.div`
   display: flex;
   overflow-x: auto;
@@ -61,6 +63,7 @@ export const Paragraph = styled.p`
   }
 `;
 
+// Espaço interno para ajustar o title e o content
 export const InsideDiv = styled.div`
   flex: none;
   background-color: #f3be00;
@@ -76,6 +79,7 @@ export const InsideDiv = styled.div`
   }
 `;
 
+// Segunda div (azul)
 export const InsideDivScroll = styled.div`
   flex: none;
   background-color: #00a8d2;
@@ -91,6 +95,7 @@ export const InsideDivScroll = styled.div`
   }
 `;
 
+// Body que ajuda o carrosel
 export const Body = styled.div`
   display: grid;
   justify-items: center;
@@ -132,6 +137,7 @@ export const CharizardImg = styled.img`
   }
 `;
 
+// Div para ajustar conteúdos
 export const DivContent = styled.div`
   @media (max-width: 530px) {
     display: flex;
