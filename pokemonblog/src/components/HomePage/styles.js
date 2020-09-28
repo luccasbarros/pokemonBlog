@@ -141,13 +141,21 @@ export const BaseFlex = styled.div`
   align-items: center;
 `;
 
+// Footer Organize
 export const BaseFlexColumn = styled(BaseFlex)`
+  @media (min-width: 600px) {
+    justify-content: space-between;
+    width: 70vw;
+  }
   @media (max-width: 530px) {
     flex-direction: column;
   }
 `;
 
 export const FlexOrganize = styled(BaseFlex)`
+  @media (min-width: 600px) {
+    justify-content: space-between;
+  }
   @media (max-width: 530px) {
     display: flex;
     margin-top: 2rem;
@@ -227,12 +235,15 @@ export const Logo = styled.h1`
 `;
 
 export const LogoFooter = styled(Logo)`
-  font-size: 1.5rem;
-  color: #ff6b18;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 0.875rem;
-
   @media (max-width: 530px) {
+    font-size: 1.5rem;
+    color: #ff6b18;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.875rem;
+  }
+
+  @media (min-width: 600px) {
+    display: none;
   }
 `;
 
@@ -287,7 +298,6 @@ export const DivFooter = styled.div`
   align-items: center;
   border-bottom: 1px solid rgba(102, 102, 102, 0.3);
   height: 12vh;
-  width: 70vw;
   @media (max-width: 530px) {
     width: auto;
     height: 22vh;
