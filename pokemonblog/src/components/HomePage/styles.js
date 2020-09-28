@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 
+// Padrão do CARD do Material
 export const useStyles = makeStyles({
   media: {
     height: 160,
@@ -15,7 +16,7 @@ export const DivCard = styled.div`
   margin-left: 2rem;
   flex-wrap: wrap;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     width: 90vw;
   }
 `;
@@ -54,7 +55,7 @@ export const RightBanner = styled.div`
   align-items: flex-start;
   justify-content: center;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -93,7 +94,7 @@ export const LastPoke = styled.p`
 export const PokemonTitle = styled(LastPoke)`
   margin-left: 0.625rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -128,6 +129,10 @@ export const Header = styled.header`
 export const AllDiv = styled.div`
   background-color: #e5e5e5;
   height: 280vh;
+
+  @media (max-width: 530px) {
+    height: auto;
+  }
 `;
 
 // Div utilizada comumente com flexbox
@@ -137,9 +142,35 @@ export const BaseFlex = styled.div`
   align-items: center;
 `;
 
+// Footer Organize
+export const BaseFlexColumn = styled(BaseFlex)`
+  @media (min-width: 600px) {
+    justify-content: space-between;
+    width: 70vw;
+  }
+  @media (max-width: 530px) {
+    flex-direction: column;
+  }
+`;
+
+export const FlexOrganize = styled(BaseFlex)`
+  @media (min-width: 600px) {
+    justify-content: space-between;
+  }
+  @media (max-width: 530px) {
+    display: flex;
+    margin-top: 2rem;
+  }
+`;
+
 export const BaseFlexFooter = styled(BaseFlex)`
   justify-content: space-between;
   width: 68vw;
+  @media (max-width: 530px) {
+    margin-top: 2rem;
+    flex-direction: column;
+    height: 25vh;
+  }
 `;
 
 // Círculo redes sociais
@@ -154,7 +185,7 @@ export const Circle = styled.div`
   margin-right: 0.625rem;
   cursor: pointer;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     width: 24px;
     height: 24px;
   }
@@ -175,7 +206,7 @@ export const ButtonCall = styled.button`
   margin-right: 2rem;
   cursor: pointer;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -191,7 +222,7 @@ export const CharizardComponent = styled.img`
   position: absolute;
   left: 721px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -205,12 +236,14 @@ export const Logo = styled.h1`
 `;
 
 export const LogoFooter = styled(Logo)`
-  font-size: 1.5rem;
-  color: #ff6b18;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 0.875rem;
+  @media (max-width: 530px) {
+    font-size: 1.5rem;
+    color: #ff6b18;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.875rem;
+  }
 
-  @media (max-width: 425px) {
+  @media (min-width: 600px) {
     display: none;
   }
 `;
@@ -230,7 +263,7 @@ export const Pokebola = styled.img`
   position: absolute;
   left: 825px;
   top: 1475px;
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
@@ -241,10 +274,12 @@ export const Pikachu = styled.img`
   position: absolute;
   left: 1000px;
   top: 1375px;
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: none;
   }
 `;
+
+// Footer Content
 
 export const Footer = styled.footer`
   width: 100%;
@@ -254,6 +289,10 @@ export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 530px) {
+    margin-top: 0;
+    height: 60vh;
+  }
 `;
 
 export const DivFooter = styled.div`
@@ -262,7 +301,10 @@ export const DivFooter = styled.div`
   align-items: center;
   border-bottom: 1px solid rgba(102, 102, 102, 0.3);
   height: 12vh;
-  width: 70vw;
+  @media (max-width: 530px) {
+    width: auto;
+    height: 22vh;
+  }
 `;
 
 export const Rights = styled.p`

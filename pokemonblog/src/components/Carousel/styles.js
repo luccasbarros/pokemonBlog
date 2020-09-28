@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
+// Div Externa
 export const ExtDivCarousel = styled.div`
   width: 70vw;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     width: 100vw;
   }
 `;
 
+// Div interna que chama a rollagem com scroll
 export const DivItem = styled.div`
   display: flex;
   overflow-x: auto;
@@ -28,7 +30,7 @@ export const DivItem = styled.div`
     background: #dad7d7;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     height: 70vh;
   }
 `;
@@ -46,7 +48,7 @@ export const BigTitle = styled.h1`
   font-size: 3rem;
   line-height: 0.1rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     font-size: 1.5rem;
   }
 `;
@@ -56,11 +58,12 @@ export const Paragraph = styled.p`
   color: white;
   margin-top: 3rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     width: 10rem;
   }
 `;
 
+// Espaço interno para ajustar o title e o content
 export const InsideDiv = styled.div`
   flex: none;
   background-color: #f3be00;
@@ -70,12 +73,13 @@ export const InsideDiv = styled.div`
   padding-left: 6rem;
   padding-top: 4rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     padding-left: 2rem;
     padding-top: 2rem;
   }
 `;
 
+// Segunda div (azul)
 export const InsideDivScroll = styled.div`
   flex: none;
   background-color: #00a8d2;
@@ -85,19 +89,20 @@ export const InsideDivScroll = styled.div`
   padding-left: 6rem;
   padding-top: 4rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     padding-left: 2rem;
     padding-top: 2rem;
   }
 `;
 
+// Body que ajuda o carrosel
 export const Body = styled.div`
   display: grid;
   justify-items: center;
   margin-top: 1.875rem;
   height: auto;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     margin-top: 0;
   }
 `;
@@ -115,7 +120,7 @@ export const ButtonCall = styled.button`
   letter-spacing: 0.1rem;
   cursor: pointer;
 
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     margin-right: 2rem;
     margin-top: 2rem;
     font-size: 0.875rem;
@@ -127,20 +132,21 @@ export const CharizardImg = styled.img`
   @media (min-width: 600px) {
     display: none;
   }
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     width: 80%;
   }
 `;
 
+// Div para ajustar conteúdos
 export const DivContent = styled.div`
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: flex;
     flex-direction: column;
   }
 `;
 
 export const DivContentAll = styled.div`
-  @media (max-width: 425px) {
+  @media (max-width: 530px) {
     display: flex;
   }
 `;

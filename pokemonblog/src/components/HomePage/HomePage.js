@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 // Carousel
 import Carousel from "../Carousel/Carousel";
+import CarouselMobile from "../CarouselMobile/CarouselMobile";
 
 // Styled-Components
 import {
@@ -35,7 +36,8 @@ import {
   Rights,
   BaseFlexFooter,
   LogoFooter,
-  // AAAAA
+  BaseFlexColumn,
+  FlexOrganize,
 } from "./styles";
 
 // Imgs
@@ -76,12 +78,13 @@ function HomePage() {
     setAnchorEl(null);
   };
 
+  // Customizando o Material-UI
   const Cards = styled(Card)`
     margin-right: 1.25rem;
     width: 8rem;
     height: 12rem;
 
-    @media (max-width: 425px) {
+    @media (max-width: 530px) {
       margin-bottom: 2rem;
     }
   `;
@@ -91,7 +94,7 @@ function HomePage() {
     width: 10rem;
     height: 12rem;
 
-    @media (max-width: 425px) {
+    @media (max-width: 530px) {
       display: none;
     }
   `;
@@ -111,27 +114,7 @@ function HomePage() {
       });
   };
 
-  const takePokemonData = (poke) => {
-    const request = axios.get(`https://pokeapi.co/api/v2/pokemon/${poke}`);
-    console.log(request);
-
-    request
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const arrayRender = () => {
-    pokemonList.forEach((p) => {
-      takePokemonData(p.name);
-    });
-  };
-
-  arrayRender();
-
+  // Chamando a api de pegar pokemon toda vez que a page for renderizada
   useEffect(() => {
     takePokemon();
   }, []);
@@ -217,6 +200,7 @@ function HomePage() {
           </DivCard>
         </DivCards>
 
+        {/* Agrupamento do Banner + Cards */}
         <GroupCardsBanner>
           <DivBigCards>
             {/* Aqui foi feito um switch case com os pokemons específicos,
@@ -287,6 +271,8 @@ function HomePage() {
               }
             })}
           </DivBigCards>
+
+          {/* Banner Lateral */}
           <RightBanner>
             <TitleBanner>Teste frontend</TitleBanner>
             <TextBanner>
@@ -305,6 +291,8 @@ function HomePage() {
               lectus. Sit sollicitudin ac egestas amet netus. Elit vitae dolor
               cursus cursus.{" "}
             </TextBanner>
+
+            {/* Button */}
             <ButtonCallBanner>Call to Action</ButtonCallBanner>
           </RightBanner>
         </GroupCardsBanner>
@@ -312,24 +300,40 @@ function HomePage() {
         <Pokebola src={PokebolaImg} />
         <Pikachu src={PikachuImg} />
 
+        {/* Carousel Mobile */}
+        <CarouselMobile pokemonList={pokemonList} />
+
+        {/* Footer */}
         <Footer>
           <DivFooter>
-            <LogoFooter>PokemonBlog</LogoFooter>
             <BaseFlex>
-              <img src={Email} />
-              <EmailP>email@testeweb.com</EmailP>
-              <Circle>
-                <img src={Instagram} />
-              </Circle>
-              <Circle>
-                <img src={Facebook} />
-              </Circle>
-              <Circle>
-                <img src={Youtube} />
-              </Circle>
+              <BaseFlexColumn>
+                {/* Email + SVG */}
+                <FlexOrganize>
+                  <img src={Email} />
+                  <EmailP>email@testeweb.com</EmailP>
+                </FlexOrganize>
+
+                {/* Redes */}
+                <FlexOrganize>
+                  <Circle>
+                    <img src={Instagram} />
+                  </Circle>
+                  <Circle>
+                    <img src={Facebook} />
+                  </Circle>
+                  <Circle>
+                    <img src={Youtube} />
+                  </Circle>
+                </FlexOrganize>
+              </BaseFlexColumn>
             </BaseFlex>
           </DivFooter>
           <BaseFlexFooter>
+            {/* Logo apenas Mobile */}
+            <LogoFooter>PokemonBlog</LogoFooter>
+
+            {/* Rodapé */}
             <Rights>2020 © Todos os direitos reservados.</Rights>
             <img src={LogoYooh} />
           </BaseFlexFooter>
