@@ -23,7 +23,7 @@ Criação utilizando React, Styled Components + API
 <a href="https://ibb.co/7NGQy97"><img src="https://i.ibb.co/VpvxBKX/desktop3.png" alt="desktop3" border="0"></a>
 
 
-### Functionalities
+### Funcionalidades
 O website possui apenas integração com a API do pokemon para buscar as sprites/nomes dos Pokémons.
 O resto é somente interface.
 
