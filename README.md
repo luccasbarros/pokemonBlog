@@ -34,7 +34,7 @@ O resto é somente interface.
 
 ### Instalação:
 **Tenha um ambiente React**
-1. Abra a pasta pokemonBlog e realize a instalação ```npm install```
+1. Realize o download do .zip. Abra a pasta pokemonBlog e realize a instalação ```npm install```
 2. No mesmo diretório execute: ```npm run start```
 3. Aguarde a aplicação abrir automaticamente.
 
