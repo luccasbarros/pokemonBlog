@@ -36,7 +36,8 @@ import {
   Rights,
   BaseFlexFooter,
   LogoFooter,
-  // AAAAA
+  BaseFlexColumn,
+  FlexOrganize,
 } from "./styles";
 
 // Imgs
@@ -93,12 +94,6 @@ function HomePage() {
     height: 12rem;
 
     @media (max-width: 530px) {
-      display: none;
-    }
-  `;
-
-  const Screen = styled.div`
-    @media (max-width: 600px) {
       display: none;
     }
   `;
@@ -322,22 +317,29 @@ function HomePage() {
 
         <Footer>
           <DivFooter>
-            <LogoFooter>PokemonBlog</LogoFooter>
             <BaseFlex>
-              <img src={Email} />
-              <EmailP>email@testeweb.com</EmailP>
-              <Circle>
-                <img src={Instagram} />
-              </Circle>
-              <Circle>
-                <img src={Facebook} />
-              </Circle>
-              <Circle>
-                <img src={Youtube} />
-              </Circle>
+              <BaseFlexColumn>
+                <FlexOrganize>
+                  <img src={Email} />
+                  <EmailP>email@testeweb.com</EmailP>
+                </FlexOrganize>
+                <FlexOrganize>
+                  <Circle>
+                    <img src={Instagram} />
+                  </Circle>
+                  <Circle>
+                    <img src={Facebook} />
+                  </Circle>
+                  <Circle>
+                    <img src={Youtube} />
+                  </Circle>
+                </FlexOrganize>
+              </BaseFlexColumn>
             </BaseFlex>
           </DivFooter>
           <BaseFlexFooter>
+            <LogoFooter>PokemonBlog</LogoFooter>
+
             <Rights>2020 © Todos os direitos reservados.</Rights>
             <img src={LogoYooh} />
           </BaseFlexFooter>

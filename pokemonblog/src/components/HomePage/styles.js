@@ -141,9 +141,27 @@ export const BaseFlex = styled.div`
   align-items: center;
 `;
 
+export const BaseFlexColumn = styled(BaseFlex)`
+  @media (max-width: 530px) {
+    flex-direction: column;
+  }
+`;
+
+export const FlexOrganize = styled(BaseFlex)`
+  @media (max-width: 530px) {
+    display: flex;
+    margin-top: 2rem;
+  }
+`;
+
 export const BaseFlexFooter = styled(BaseFlex)`
   justify-content: space-between;
   width: 68vw;
+  @media (max-width: 530px) {
+    margin-top: 2rem;
+    flex-direction: column;
+    height: 25vh;
+  }
 `;
 
 // Círculo redes sociais
@@ -215,7 +233,6 @@ export const LogoFooter = styled(Logo)`
   margin-left: 0.875rem;
 
   @media (max-width: 530px) {
-    display: none;
   }
 `;
 
@@ -260,6 +277,7 @@ export const Footer = styled.footer`
   align-items: center;
   @media (max-width: 530px) {
     margin-top: 0;
+    height: 60vh;
   }
 `;
 
@@ -270,6 +288,10 @@ export const DivFooter = styled.div`
   border-bottom: 1px solid rgba(102, 102, 102, 0.3);
   height: 12vh;
   width: 70vw;
+  @media (max-width: 530px) {
+    width: auto;
+    height: 22vh;
+  }
 `;
 
 export const Rights = styled.p`
